@@ -1,16 +1,63 @@
-# belajarflutter
+# H1D023075_Tugas6
 
-A new Flutter project.
+```
+Nama: Daiva Paundra Gevano
+NIM: H1D023075
+Shift KRS: F
+Shift Baru: A
+```
 
-## Getting Started
+## Screenshot Tampilan
+<img width="490" height="874" alt="Screenshot 2025-11-03 202409" src="https://github.com/user-attachments/assets/58c5b874-1957-45be-89e3-0fcf0dc70ed2" />
+<img width="491" height="875" alt="Screenshot 2025-11-03 202420" src="https://github.com/user-attachments/assets/5e00aa7b-23ee-494f-b538-f88e4a754097" />
 
-This project is a starting point for a Flutter application.
+## Penjelasan
+File `form_data.dart` berfungsi untuk mengambil input dari pengguna melalui tiga TextField `nama`, `nim`, `tahunLahir`. Setiap input disimpan menggunakan TextEditingController, misalnya:
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+final _namaController = TextEditingController();
+final _nimController = TextEditingController();
+final _tahunLahirController = TextEditingController();
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Setelah semua data diisi, pengguna menekan tombol Submit, yang akan menjalankan fungsi `Navigator.push()` untuk mengirim data ke halaman tampilan:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => TampilData(
+          nim: _nimController.text,
+          nama: _namaController.text,
+          tahunLahir: int.parse(_tahunLahirController.text),
+        ),
+      ),
+    );
+  },
+  child: const Text('Submit'),
+),
+```
+
+Di sini terjadi proses passing data, di mana nilai dari controller dikirim sebagai parameter konstruktor ke kelas `TampilData`, yang merupakan `StatelessWidget`. Kelas ini menerima data melalui parameter konstruktor:
+
+```dart
+final String nim;
+final String nama;
+final int tahunLahir;
+
+const TampilData({
+  Key? key,
+  required this.nim,
+  required this.nama,
+  required this.tahunLahir,
+}) : super(key: key);
+```
+
+```dart
+Text("NIM: $nim"),
+Text("Nama: $nama"),
+Text("Tahun Lahir: $tahunLahir"),
+```
+>>>>>>> 1de08c23a533492ea1a9dac96d95ab99632ddd7c
