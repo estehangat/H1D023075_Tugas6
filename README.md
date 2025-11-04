@@ -40,7 +40,7 @@ ElevatedButton(
 ),
 ```
 
-Di sini terjadi proses passing data, di mana nilai dari controller dikirim sebagai parameter konstruktor ke kelas `TampilData`, yang merupakan StatelessWidget. Kelas ini menerima data melalui parameter konstruktor:
+Di sini terjadi proses passing data, di mana nilai dari controller dikirim sebagai parameter konstruktor ke kelas `TampilData`, yang merupakan `StatelessWidget`. Kelas ini menerima data melalui parameter konstruktor:
 
 ```dart
 final String nim;
