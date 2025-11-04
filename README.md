@@ -60,4 +60,3 @@ Text("NIM: $nim"),
 Text("Nama: $nama"),
 Text("Tahun Lahir: $tahunLahir"),
 ```
->>>>>>> 1de08c23a533492ea1a9dac96d95ab99632ddd7c
